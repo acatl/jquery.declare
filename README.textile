@@ -3,68 +3,67 @@
 Declaring some variable:
 
 <pre>
-	$.declare("com.myapp.myVariable", "#FFCC00");
-
-	console.log(com.myapp.myVariable);
+$.declare("com.myapp.myVariable", "#FFCC00");
+console.log(com.myapp.myVariable);
 </pre>
 
 Declaring an object:
 <pre>
-	$.declare("com.myapp.myLib", {
-		addNumbers: function (a,b) {
-			return a+b;
-		},
+$.declare("com.myapp.myLib", {
+  addNumbers: function (a,b) {
+    return a+b;
+  },
+  
+  localVariable: 23,
+  getLocalVariable: function () {
+    return this.localVariable;
+  }
+});
 
-		localVariable: 23,
-		getLocalVariable: function () {
-			return this.localVariable;
-		}
-	});
+var myLib = com.myapp.myLib;
 
-	var myLib = com.myapp.myLib;
-
-	myLib.addNumbers(1,2);
-	myLib.getLocalVariable();
+myLib.addNumbers(1,2);
+myLib.getLocalVariable();
 </pre>
 
 Declaring a simple function:
 <pre>
-	$.declare("com.myapp.myFunction", function (a) {
-		// do something
-		return a;
-	});
+$.declare("com.myapp.myFunction", function (a) {
+  // do something
+  return a;
+});
 
-	var result = com.myapp.myFunction(123);
-	console.log(result);
+var result = com.myapp.myFunction(123);
+console.log(result);
 </pre>
 
 Using the Module Pattern
 <pre>
-	$.declare("com.myapp.myObject", (function () {
-		var privateVar = "my name is: ";
-		return {
-			hello: function (name) {
-				return privateVar + name;
-			}
-		}
-	})()
-	);
+$.declare("com.myapp.myObject", (function () {
+  var privateVar = "my name is: ";
+  return {
+    hello: function (name) {
+      return privateVar + name;
+    }
+  }
+})()
+);
 
-	var myObject = com.myapp.myObject;
-	myObject.hello("acatl");
+var myObject = com.myapp.myObject;
+myObject.hello("acatl");
 </pre>
 
 Adding a function using Module Pattern
 <pre>
-	$.declare("com.myapp.myClass", function () {
-		var privateVar = "my name is: ";
-		return {
-			hello: function (name) {
-				return privateVar + name;
-			}
-		}
-	});
+$.declare("com.myapp.myClass", function () {
+  var privateVar = "my name is: ";
+  return {
+    hello: function (name) {
+      return privateVar + name;
+    }
+  }
+});
 
-	var MyClass = new com.myapp.myClass();
-	MyClass.hello("acatl");
+var MyClass = new com.myapp.myClass();
+MyClass.hello("acatl");
 </pre>
