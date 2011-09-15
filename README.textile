@@ -1,6 +1,7 @@
 *Usage*
 
 Declaring some variable:
+
 ```js
 $.declare("com.myapp.myVariable", "#FFCC00");
 
@@ -8,6 +9,7 @@ console.log(com.myapp.myVariable);
 ```
 
 Declaring an object:
+
 ```js
 $.declare("com.myapp.myLib", {
   addNumbers: function (a,b) {
