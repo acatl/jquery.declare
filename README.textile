@@ -2,15 +2,14 @@
 
 Declaring some variable:
 
-```js
+<pre>
 $.declare("com.myapp.myVariable", "#FFCC00");
 
 console.log(com.myapp.myVariable);
-```
+</pre>
 
 Declaring an object:
-
-```js
+<pre>
 $.declare("com.myapp.myLib", {
   addNumbers: function (a,b) {
     return a+b;
@@ -26,10 +25,10 @@ var myLib = com.myapp.myLib;
 
 myLib.addNumbers(1,2);
 myLib.getLocalVariable();
-```
+</pre>
 
 Declaring a simple function:
-```js
+<pre>
 $.declare("com.myapp.myFunction", function (a) {
   // do something
   return a;
@@ -37,10 +36,10 @@ $.declare("com.myapp.myFunction", function (a) {
 
 var result = com.myapp.myFunction(123);
 console.log(result);
-```
+</pre>
 
 Using the Module Pattern
-```js
+<pre>
 $.declare("com.myapp.myObject", (function () {
   var privateVar = "my name is: ";
   return {
@@ -53,10 +52,10 @@ $.declare("com.myapp.myObject", (function () {
 
 var myObject = com.myapp.myObject;
 myObject.hello("acatl");
-```
+</pre>
 
 Adding a function using Module Pattern
-```js
+<pre>
 $.declare("com.myapp.myClass", function () {
   var privateVar = "my name is: ";
   return {
@@ -68,4 +67,4 @@ $.declare("com.myapp.myClass", function () {
 
 var MyClass = new com.myapp.myClass();
 MyClass.hello("acatl");
-```
+</pre>
