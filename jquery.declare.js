@@ -5,9 +5,9 @@
  * Licensed under the MIT License.
  * http://jquery.org/license
  */
-(function ($) {
+(function($) {
 	$.extend({
-		declare: function (namespace, object) {
+		declare: function(namespace, object) {
 			var scopes = namespace.split(".");
 			var scopeLength = scopes.length;
 			var scopeObject = window;
@@ -15,7 +15,7 @@
 			for (var i = 0; i < scopeLength; i++) {
 				var scope = scopes[i];
 				if (i != scopeLength - 1) {
-					if (!typeof scopeObject[scope] != "undefined") {
+					if (typeof scopeObject[scope] == "undefined") {
 						scopeObject[scope] = {};
 					}
 					scopeObject = scopeObject[scope];
